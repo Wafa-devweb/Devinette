@@ -1,7 +1,28 @@
 body {
     font-family: 'Montserrat', sans-serif;
+    background-image: url('image/Sombre-FD.avif');
+    color: white;
 }
+
 h1 {
-    font-size: larger;
+    padding-top: 15px;
+    text-align: center;
+    font-weight: 400;
     font-style: italic;
-} 
+    font-size: 25px;
+}
+.neon {
+    color:#fff;
+    font-weight:bolder;
+    animation: neon-blink 7s ease-in-out infinite;
+    animation-fill-mode: forwards;
+}
+    @keyframes neon-blink {
+    0%, 44.5%, 45.5%, 49%, 51%, 100% { 
+      text-shadow:
+        0 0 7px hotpink, 0 0 10px hotpink, 0 0 20px hotpink,0 0 50px hotpink,
+        0 0 70px hotpink, 0 0 100px hotpink, 0 0 120px hotpink, 0 0 157px hotpink;
+    }
+    45%, 50% { text-shadow: unset; } /* coupures */ 
+  }
+  
