@@ -1,28 +1,52 @@
 body {
-    font-family: 'Montserrat', sans-serif;
-    background-image: url('image/Sombre-FD.avif');
-    color: white;
+    font-family: 'Montserrat';
+    background-image: url('image/dark-riddle.jpeg');
+    image-rendering: optimizeQuality;
+    background-size: cover;
+    color: snow;
+    padding: 0;
+    margin: 0;
 }
 
-h1 {
-    padding-top: 15px;
+/* ----- hearder ----------- */ 
+h1 { 
     text-align: center;
     font-weight: 400;
     font-style: italic;
     font-size: 25px;
 }
-.neon {
-    color:#fff;
+.neon { 
+    color:snow;
     font-weight:bolder;
-    animation: neon-blink 7s ease-in-out infinite;
-    animation-fill-mode: forwards;
+    animation : neon-blink  7s ease-in-out infinite; 
 }
-    @keyframes neon-blink {
-    0%, 44.5%, 45.5%, 49%, 51%, 100% { 
-      text-shadow:
-        0 0 7px hotpink, 0 0 10px hotpink, 0 0 20px hotpink,0 0 50px hotpink,
-        0 0 70px hotpink, 0 0 100px hotpink, 0 0 120px hotpink, 0 0 157px hotpink;
-    }
-    45%, 50% { text-shadow: unset; } /* coupures */ 
+@keyframes neon-blink { 0%, 44.5%, 45.5%, 49%, 51%, 100% { 
+    text-shadow: 0 0 7px snow, 0 0 10px snow, 0 0 20px red,0 0 50px black;
+    } 45%, 50% { 
+        text-shadow: unset; }
+    } /* coupures */ 
+
+header h2 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: snow;
+    text-align: center;
+    margin: 60px;
+    font-style: italic;
+    font-size: 27px;
+}
+/** form **/
+
+.form { 
+    display: block;
+    text-align: center;
+    color: snow ;
+    font-size: 27px;
+    font-weight: 700;
+
+}
+
+input:focus {
+    background: #eaeaea;
   }
-  
+
+/*, 0 0 70px snow, 0 0 100px snow, 0 0 120px black, 0 0 157px red*/

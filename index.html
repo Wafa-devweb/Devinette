@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <title> Devinez Le Nombre </title>
+    <title> Jeu - Devinez Le Nombre </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no">
     <meta name="description" content="Jeu de devinette" />
@@ -24,8 +24,44 @@
 
 <body>
     <header>
-        <h1 class="neon">
-            DeViNeZ - LeS NoMbReS </br>
-        </h1>
+        <h1 class="neon"> </br> DeViNeZ Le NoMbRe </h1>
+        <h2>
+         Le Jeu et simple ! <br> Trouve le nombre compris entre 1 a 100. <br> Pour chaque partie tu as 7 essai.
+        </h2>
     </header>
+    <main>
+        <div class="form">
+            <label for="guessField">Enter a guess: </label>
+            <input type="number" min="1" max="100" required id="guessField" class="guessField">
+            <input type="submit" value="Submit guess" class="guessSubmit">
+          </div>
+      
+          <div class="resultParas">
+            <p class="guesses"></p>
+            <p class="lastResult"></p>
+            <p class="lowOrHi"></p>
+          </div>
+    </main>
+    <script>
+      /* Ajout des variables pour les stocker */ 
+      /* variable reçoit le nombre aléatoire entre 1 et 100, calculé en utilisant un algorithme mathématique.*/
+      let randomNumber = Math.floor(Math.random() * 100) + 1;
+      /*Les trois variables suivantes sont chacune faite pour stocker une référence aux paragraphes de résultats dans le HTML ; elles sont utilisées pour insérer des valeurs dans les paragraphes plus tard dans le code :*/
+      let guesses = document.querySelector(".guesses");
+      let lastResult = document.querySelector(".lastResult");
+      let lowOrHi = document.querySelector(".lowOrHi");
+      
+      /*Les deux variables suivantes stockent des références au champ de saisie du formulaire et au bouton de soumission ; elles sont utilisées pour écouter l'envoi de la supposition (guess) plus tard.*/
+      let guessSubmit = document.querySelector(".guessSubmit");
+      let guessField = document.querySelector(".guessField");
+      
+      /*Nos deux dernières variables stockent un nombre de suppositions qui vaut initialement 1 (utilisées pour garder une trace du nombre de suppositions que le joueur a faite) et une référence à un bouton de réinitialisation qui n'existe pas encore.*/
+      let guessCount = 1 ;
+      let resetButton;
+  
+      /*Fonctions */
+      function checkGuess() {
+        alert("Je suis un espace réservé");
+    }
+      </script>
 </body>
