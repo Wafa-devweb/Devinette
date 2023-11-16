@@ -4,7 +4,7 @@
     <title> Jeu - Devinez Le Nombre </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no">
-    <meta name="description" content="Jeu de devinette" />
+    <meta name="description" content="Jeu - devinette" />
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700" rel="stylesheet">
@@ -31,7 +31,7 @@
     </header>
     <main>
         <div class="form">
-            <label for="guessField">Enter a guess: </label>
+            <label for="guessField">Entrez une supposition: </label>
             <input type="number" min="1" max="100" required id="guessField" class="guessField">
             <input type="submit" value="Submit guess" class="guessSubmit">
           </div>
@@ -58,10 +58,68 @@
       /*Nos deux dernières variables stockent un nombre de suppositions qui vaut initialement 1 (utilisées pour garder une trace du nombre de suppositions que le joueur a faite) et une référence à un bouton de réinitialisation qui n'existe pas encore.*/
       let guessCount = 1 ;
       let resetButton;
+      guessField.focus();
   
       /*Fonctions */
       function checkGuess() {
-        alert("Je suis un espace réservé");
+        let userGuess = Number(guessField.value);
+        if (guessCount === 1) {
+            guesses.textContent = "Propositions précédentes : ";
+        }
+        guesses.textContent += userGuess + " ";
+        
+        if (userGuess === randomNumber) {
+            lastResult.textContent = "Bravo, vous avez trouvé !";
+            lastResult.style.backgroundColor = "green";
+            lowOrHi.textContent = "";
+            setGameOver();
+        } else if (guessCount === 7) {
+            lastResult.textContent = "!!! PERDU !!!";
+            setGameOver();
+        } else {
+            lastResult.textContent = "Faux !";
+            lastResult.style.backgroundColor = "red";
+            if (userGuess < randomNumber) {
+                lowOrHi.textContent = "Le nombre saisi est trop petit !";
+            } else if (userGuess > randomNumber) {
+                lowOrHi.textContent = "Le nombre saisi est trop grand !";
+            }
+        }
+        
+        guessCount++;
+        guessField.value = "";
+        guessField.focus();
     }
-      </script>
+    
+    guessSubmit.addEventListener("click", checkGuess);
+    
+    function setGameOver() {
+        guessField.disabled = true;
+        guessSubmit.disabled = true;
+        resetButton = document.createElement("button");
+        resetButton.textContent = "Commencer une nouvelle partie";
+        document.body.appendChild(resetButton);
+        resetButton.addEventListener("click", resetGame);
+    }
+
+    function resetGame() {
+        guessCount = 1;
+        let resetParas = document.querySelectorAll(".resultParas p");
+        for (let i = 0; i < resetParas.length; i++) {
+            resetParas[i].textContent = "";
+        }
+        
+        resetButton.parentNode.removeChild(resetButton);
+        
+        guessField.disabled = false;
+        guessSubmit.disabled = false;
+        guessField.value = "";
+        guessField.focus();
+        
+        lastResult.style.backgroundColor = "white";
+        
+        randomNumber = Math.floor(Math.random() * 100) + 1;
+    }
+
+     </script>
 </body>

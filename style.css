@@ -2,10 +2,13 @@ body {
     font-family: 'Montserrat';
     background-image: url('image/dark-riddle.jpeg');
     image-rendering: optimizeQuality;
+    background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
+    object-fit: cover;
     color: snow;
-    padding: 0;
-    margin: 0;
+    padding-bottom: 350px;
+    margin: 0px;
 }
 
 /* ----- hearder ----------- */ 
@@ -41,12 +44,38 @@ header h2 {
     text-align: center;
     color: snow ;
     font-size: 27px;
-    font-weight: 700;
+    margin-bottom: 15px;;
 
 }
 
 input:focus {
     background: #eaeaea;
-  }
+}
 
-/*, 0 0 70px snow, 0 0 100px snow, 0 0 120px black, 0 0 157px red*/
+.main {
+    display: block;
+}
+
+
+
+/* js */
+.resultParas { 
+    display: flex;
+    text-align: center;
+    color: snow ;
+    font-size: 17px;
+    Margin : 14px 400px ;
+    flex-direction: column;
+    border: 10px;
+}
+
+/********medias scaries *******/
+
+
+@media (max-width: 860px) {
+    .resultParas  {
+        display: block;
+        padding: 5px;
+        margin : 20px;
+    }
+}
