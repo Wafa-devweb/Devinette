@@ -48,6 +48,13 @@ header h2 {
 
 }
 
+label {
+    font-size: 23px;
+}
+input.guessSubmit {
+    font-size: medium;
+}
+
 input:focus {
     background: #eaeaea;
 }
@@ -64,15 +71,14 @@ input:focus {
     text-align: center;
     color: snow ;
     font-size: 17px;
-    Margin : 14px 400px ;
+    Margin : 14px 540px ;
     flex-direction: column;
     border: 10px;
 }
 
 /********medias scaries *******/
 
-
-@media (max-width: 860px) {
+@media (max-width: 1024px) {
     .resultParas  {
         display: block;
         padding: 5px;

@@ -24,14 +24,14 @@
 
 <body>
     <header>
-        <h1 class="neon"> </br> DeViNeZ Le NoMbRe </h1>
+        <h1 class="neon"> </br>? DeViNe Le NoMbRe ?</h1>
         <h2>
-         Le Jeu et simple ! <br> Trouve le nombre compris entre 1 a 100. <br> Pour chaque partie tu as 7 essai.
+         Le Jeu est simple ! <br> Trouve le nombre compris entre 1 et 100. <br> Pour chaque partie tu as 7 essai.
         </h2>
     </header>
     <main>
         <div class="form">
-            <label for="guessField">Entrez une supposition: </label>
+            <label for="guessField">Entre un nombre : </label>
             <input type="number" min="1" max="100" required id="guessField" class="guessField">
             <input type="submit" value="Submit guess" class="guessSubmit">
           </div>
@@ -67,7 +67,6 @@
             guesses.textContent = "Propositions précédentes : ";
         }
         guesses.textContent += userGuess + " ";
-        
         if (userGuess === randomNumber) {
             lastResult.textContent = "Bravo, vous avez trouvé !";
             lastResult.style.backgroundColor = "green";
